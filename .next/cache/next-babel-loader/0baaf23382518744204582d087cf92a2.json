@@ -1,0 +1,7 @@
+{
+  "ast": null,
+  "code": "import axios from \"axios\";\nimport { getSessionToken } from \"@shopify/app-bridge-utils\";\nimport createApp from \"@shopify/app-bridge\";\nvar host = null;\n\nif (true) {\n  host = window.location.hostname;\n}\n\nvar baseUrl = \"https://\" + host + \"/api/\";\nvar tempURL = \"http://localhost:8081/api/\";\nvar url = host && host.includes(\"localhost\") ? tempURL : baseUrl;\nvar BaseService = axios.create({\n  baseURL: url\n}); // intercept all requests on this axios instance\n\nif (true) {\n  BaseService.interceptors.request.use(function (config) {\n    var app = createApp({\n      apiKey: API_KEY,\n      host: window.host\n    });\n    return getSessionToken(app) // requires an App Bridge instance\n    .then(function (token) {\n      // append your request headers with an authenticated token\n      config.headers[\"Authorization\"] = \"Bearer \".concat(token);\n      return config;\n    });\n  });\n} // export your axios instance to use within your app\n\n\nexport default BaseService;",
+  "map": null,
+  "metadata": {},
+  "sourceType": "module"
+}

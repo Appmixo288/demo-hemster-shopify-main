@@ -1,0 +1,50 @@
+span.back-icon {
+  display: flex;
+}
+span.back-icon .Polaris-Icon {
+  width: 1.5rem;
+  height: 1.8rem;
+  margin-right: 5px;
+  line-height: 1.8rem;
+  vertical-align: middle;
+}
+.am-add-product {
+  text-align: right;
+  margin: 2rem 2rem 0 2rem;
+}
+.action-btns {
+  margin: 2rem;
+}
+.custom-tag {
+  margin: 0.5rem 0.5rem 0 0;
+  display: inline-grid;
+}
+.pro-tag {
+  margin: 0.2rem;
+}
+.heading-mar {
+  margin-bottom: 1.6rem;
+}
+.popup-settings .Polaris-FormLayout__Item {
+  margin-left:0px;
+}
+.setting-spinner {
+  text-align: center;
+  margin: 10%;
+}
+label#urlLabel {
+  margin-bottom: 1.3rem;
+}
+.type-radio .Polaris-Stack__Item {
+  margin-top: 1.3rem;
+  margin-left: 1.6rem;
+  max-width: 100%;
+}
+.spinner{
+  margin-top: 30px;
+  text-align: center;
+}
+.edit-style-btn {
+  width: 100%;
+  text-align: right;
+}

@@ -1,0 +1,17 @@
+{
+  "ast": null,
+  "code": "import { combineReducers } from \"redux\";\nimport allReducer from \"./allReducer\";\nexport var rootReducer = combineReducers({\n  allReducer: allReducer\n});\nexport default rootReducer;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "c:/Users/Reena/Desktop/client/hemster-shopify/client/redux/reducer/index.js"
+    ],
+    "names": ["combineReducers", "allReducer", "rootReducer"],
+    "mappings": "AAAA,SAASA,eAAT,QAAgC,OAAhC;AACA,OAAOC,UAAP,MAAuB,cAAvB;AACA,OAAO,IAAMC,WAAW,GAAGF,eAAe,CAAC;AACvCC,EAAAA,UAAU,EAAVA;AADuC,CAAD,CAAnC;AAIP,eAAeC,WAAf",
+    "sourcesContent": [
+      "import { combineReducers } from \"redux\";\r\nimport allReducer from \"./allReducer\";\r\nexport const rootReducer = combineReducers({\r\n    allReducer\r\n});\r\n\r\nexport default rootReducer;"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

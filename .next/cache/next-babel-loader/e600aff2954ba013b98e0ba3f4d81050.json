@@ -1,0 +1,28 @@
+{
+  "ast": null,
+  "code": "import { applyMiddleware, compose, createStore } from \"redux\";\nimport thunk from \"redux-thunk\";\nimport rootReducer from \"../redux/reducer/index\";\nvar composeEnhancers = // typeof window === 'object' &&\n//     (window.location.hostname === \"localhost\" ) ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose : compose;\ntrue && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;\nvar enhancer = composeEnhancers(applyMiddleware(thunk));\nvar store = createStore(rootReducer, enhancer);\nexport default store;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "c:/Users/Reena/Desktop/client/hemster-shopify/client/redux/store.js"
+    ],
+    "names": [
+      "applyMiddleware",
+      "compose",
+      "createStore",
+      "thunk",
+      "rootReducer",
+      "composeEnhancers",
+      "window",
+      "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__",
+      "enhancer",
+      "store"
+    ],
+    "mappings": "AAAA,SAASA,eAAT,EAA0BC,OAA1B,EAAmCC,WAAnC,QAAsD,OAAtD;AACA,OAAOC,KAAP,MAAkB,aAAlB;AACA,OAAOC,WAAP,MAAwB,wBAAxB;AAEA,IAAMC,gBAAgB,GAClB;AACA;AACA,QACAC,MAAM,CAACC,oCADP,GAC8CD,MAAM,CAACC,oCAAP,CAA4C,EAA5C,CAD9C,GACgGN,OAJpG;AAMA,IAAMO,QAAQ,GAAGH,gBAAgB,CAC7BL,eAAe,CAACG,KAAD,CADc,CAAjC;AAGA,IAAMM,KAAK,GAAGP,WAAW,CAACE,WAAD,EAAcI,QAAd,CAAzB;AACA,eAAeC,KAAf",
+    "sourcesContent": [
+      "import { applyMiddleware, compose, createStore } from \"redux\";\r\nimport thunk from \"redux-thunk\";\r\nimport rootReducer from \"../redux/reducer/index\";\r\n\r\nconst composeEnhancers =\r\n    // typeof window === 'object' &&\r\n    //     (window.location.hostname === \"localhost\" ) ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose : compose;\r\n    typeof window === 'object' &&\r\n    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;\r\n\r\nconst enhancer = composeEnhancers(\r\n    applyMiddleware(thunk),\r\n);\r\nconst store = createStore(rootReducer, enhancer);\r\nexport default store;"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

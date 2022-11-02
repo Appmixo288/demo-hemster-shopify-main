@@ -1,0 +1,25 @@
+{
+  "ast": null,
+  "code": "// import * as authService from \"../../services/authService\";\nexport var PAGE_INFO = \"PAGE_INFO\";\nexport var FAILED = \"FAILED\";\nexport var pageInfoAction = function pageInfoAction(name) {\n  return function (dispatch) {\n    dispatch({\n      type: PAGE_INFO,\n      data: name\n    });\n  };\n};",
+  "map": {
+    "version": 3,
+    "sources": [
+      "c:/Users/Reena/Desktop/client/hemster-shopify/client/redux/action/index.js"
+    ],
+    "names": [
+      "PAGE_INFO",
+      "FAILED",
+      "pageInfoAction",
+      "name",
+      "dispatch",
+      "type",
+      "data"
+    ],
+    "mappings": "AAAA;AACA,OAAO,IAAMA,SAAS,GAAG,WAAlB;AACP,OAAO,IAAMC,MAAM,GAAG,QAAf;AAEP,OAAO,IAAMC,cAAc,GAAG,SAAjBA,cAAiB,CAACC,IAAD,EAAU;AAEpC,SAAO,UAACC,QAAD,EAAc;AAEjBA,IAAAA,QAAQ,CAAC;AACLC,MAAAA,IAAI,EAAEL,SADD;AAELM,MAAAA,IAAI,EAAEH;AAFD,KAAD,CAAR;AAKH,GAPD;AAQH,CAVM",
+    "sourcesContent": [
+      "// import * as authService from \"../../services/authService\";\r\nexport const PAGE_INFO = \"PAGE_INFO\";\r\nexport const FAILED = \"FAILED\";\r\n\r\nexport const pageInfoAction = (name) => {\r\n\r\n    return (dispatch) => {\r\n\r\n        dispatch({\r\n            type: PAGE_INFO,\r\n            data: name\r\n        });\r\n\r\n    }\r\n};"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

@@ -1,0 +1,217 @@
+<style>
+    /** * Overlay * -- only show for tablet and up */
+    @media only screen and (min-width: 40em) {
+        .h-modal-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            backface-visibility: hidden;
+            transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+        }
+
+        .h-modal-overlay.h-active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .h-modal-overlay {
+        z-index: 99999;
+    }
+
+    /** * h-Modal */
+    .h-modal {
+        width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0 auto;
+        background-color: #fff;
+        max-width: 75rem;
+        min-height: 20rem;
+        padding: 3rem 1rem;
+        border-radius: 10px;
+        opacity: 0;
+        overflow-y: auto;
+        visibility: hidden;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
+        backface-visibility: hidden;
+        transform: scale(1.2);
+        transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    .h-modal .close-h-modal {
+        position: absolute;
+        cursor: pointer;
+        top: 5px;
+        right: 15px;
+        opacity: 0;
+        backface-visibility: hidden;
+        transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+        transition-delay: 0.3s;
+    }
+
+    .h-modal .close-h-modal svg {
+        width: 1.70em;
+        height: 1.70em;
+        opacity: 0.3;
+    }
+
+    .h-modal .h-modal-content {
+        opacity: 0;
+        backface-visibility: hidden;
+        transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+        transition-delay: 0.3s;
+    }
+
+    .h-modal.h-active {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .h-modal.h-active .h-modal-content {
+        opacity: 1;
+    }
+
+    .h-modal.h-active .close-h-modal {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+
+    /** * Mobile styling */
+    @media only screen and (max-width: 39.9375em) {
+
+        .h-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 0;
+            transform: scale(1.1);
+            padding: 0 !important;
+        }
+
+        .close-h-modal {
+            right: 20px !important;
+        }
+    }
+
+
+    .h-grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+
+    .h-grid-item {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .h-modal-content {
+        padding: 10px 10px;
+    }
+
+    .h-modal-close-button {
+        background: #1F1E2C;
+        border-radius: 4px;
+        color: #fff;
+        padding: inherit;
+        width: 250px;
+        text-align: center;
+        margin: 15px auto;
+        letter-spacing: 0.2rem;
+        cursor: pointer;
+    }
+
+    .h-modal-number {
+        font-family: Canela;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: center;
+        font-feature-settings: 'pnum'on, 'lnum'on;
+        color: #C1ACA4;
+    }
+
+    .h-modal-title-container {
+        line-height: 22px;
+        text-align: center;
+        font-feature-settings: 'pnum'on, 'lnum'on;
+        color: #525258;
+        width: 62%;
+        margin: 0 auto;
+    }
+
+    .popup-title-text {
+        font-family: Sweet Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin: 15px 0;
+    }
+</style>
+
+<!-- h-modal -->
+<div class="h-modal-overlay">
+    <div class="h-modal">
+
+        <a class="close-h-modal">
+            <svg viewBox="0 0 20 20"
+                onclick='jQuery(".h-modal-overlay").removeClass("h-active"); jQuery(".h-modal").removeClass("h-active");'>
+                <path fill="#000000"
+                    d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z">
+                </path>
+            </svg>
+        </a><!-- close h-modal -->
+
+        <div class="h-modal-content">
+            <div class="h-modal-title-container">We’ve partnered with Hemster to provide free tailoring on select
+                garments to ensure you get the
+                perfect fit.</div>
+            <div class="h-grid-container">
+                <div class="h-grid-item">
+                    <div class="h-modal-number">01</div>
+                    <div class="popup-title-text">Get your FitKit with your Garments</div>
+                    <div>Using Hemster’s self fit system, you can find your fit without leaving the house.</div>
+                </div>
+                <div class="h-grid-item">
+                    <div class="h-modal-number">02</div>
+                    <div class="popup-title-text">Book a Virtual Fitting</div>
+                    <div>It’s free, easy and online. Our fitters will answer any questions and get you the perfect
+                        fit.</div>
+                </div>
+                <div class="h-grid-item">
+                    <div class="h-modal-number">03</div>
+                    <div class="popup-title-text">Get them
+                        Tailored</div>
+                    <div>Free shipping and 24 hour turnaround time included. Our expert tailors will make them fit
+                        perfectly.</div>
+                </div>
+
+            </div>
+            <div class="h-modal-close-button"
+                onclick='jQuery(".h-modal-overlay").removeClass("h-active"); jQuery(".h-modal").removeClass("h-active");'>CLOSE
+            </div>
+        </div><!-- content -->
+
+    </div><!-- h-modal -->
+</div><!-- overlay -->

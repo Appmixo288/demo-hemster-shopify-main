@@ -1,0 +1,1 @@
+{"ast":null,"code":"// import * as authService from \"../../services/authService\";\nexport const PAGE_INFO = \"PAGE_INFO\";\nexport const FAILED = \"FAILED\";\nexport const pageInfoAction = name => {\n  return dispatch => {\n    dispatch({\n      type: PAGE_INFO,\n      data: name\n    });\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

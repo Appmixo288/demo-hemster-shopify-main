@@ -1,0 +1,33 @@
+{
+  "ast": null,
+  "code": "import { FAILED, PAGE_INFO } from \"../action\";\nvar INITIAL_STATE = {\n  error_msg: {},\n  page_info: {\n    name: \"fitkit\"\n  }\n};\n\nvar handleReducer = function handleReducer() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case PAGE_INFO:\n      {\n        console.log(\"action.data---\", action.data);\n        return Object.assign({}, state, {\n          page_info: {\n            name: action.data\n          }\n        });\n      }\n\n    case FAILED:\n      {\n        return Object.assign({}, state, {\n          error_msg: action.data.error_msg\n        });\n      }\n\n    default:\n      return state;\n  }\n};\n\nexport default handleReducer;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "c:/Users/Reena/Desktop/client/hemster-shopify/client/redux/reducer/allReducer.js"
+    ],
+    "names": [
+      "FAILED",
+      "PAGE_INFO",
+      "INITIAL_STATE",
+      "error_msg",
+      "page_info",
+      "name",
+      "handleReducer",
+      "state",
+      "action",
+      "type",
+      "console",
+      "log",
+      "data",
+      "Object",
+      "assign"
+    ],
+    "mappings": "AAAA,SAASA,MAAT,EAAiBC,SAAjB,QAAkC,WAAlC;AAEA,IAAMC,aAAa,GAAG;AAClBC,EAAAA,SAAS,EAAE,EADO;AAElBC,EAAAA,SAAS,EAAE;AAAEC,IAAAA,IAAI,EAAE;AAAR;AAFO,CAAtB;;AAKA,IAAMC,aAAa,GAAG,SAAhBA,aAAgB,GAAmC;AAAA,MAAlCC,KAAkC,uEAA1BL,aAA0B;AAAA,MAAXM,MAAW;;AAErD,UAAQA,MAAM,CAACC,IAAf;AAEI,SAAKR,SAAL;AACI;AACIS,QAAAA,OAAO,CAACC,GAAR,CAAY,gBAAZ,EAA8BH,MAAM,CAACI,IAArC;AACA,eAAOC,MAAM,CAACC,MAAP,CAAc,EAAd,EAAkBP,KAAlB,EAAyB;AAAEH,UAAAA,SAAS,EAAE;AAAEC,YAAAA,IAAI,EAAEG,MAAM,CAACI;AAAf;AAAb,SAAzB,CAAP;AACH;;AACL,SAAKZ,MAAL;AACI;AACI,eAAOa,MAAM,CAACC,MAAP,CAAc,EAAd,EAAkBP,KAAlB,EAAyB;AAAEJ,UAAAA,SAAS,EAAEK,MAAM,CAACI,IAAP,CAAYT;AAAzB,SAAzB,CAAP;AACH;;AAEL;AACI,aAAOI,KAAP;AAbR;AAeH,CAjBD;;AAkBA,eAAeD,aAAf",
+    "sourcesContent": [
+      "import { FAILED, PAGE_INFO } from \"../action\";\r\n\r\nconst INITIAL_STATE = {\r\n    error_msg: {},\r\n    page_info: { name: \"fitkit\" }\r\n};\r\n\r\nconst handleReducer = (state = INITIAL_STATE, action) => {\r\n\r\n    switch (action.type) {\r\n\r\n        case PAGE_INFO:\r\n            {\r\n                console.log(\"action.data---\", action.data);\r\n                return Object.assign({}, state, { page_info: { name: action.data } });\r\n            }\r\n        case FAILED:\r\n            {\r\n                return Object.assign({}, state, { error_msg: action.data.error_msg });\r\n            }\r\n\r\n        default:\r\n            return state;\r\n    }\r\n}\r\nexport default handleReducer;    "
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}
